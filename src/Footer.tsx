@@ -1,26 +1,8 @@
-import { userDataType } from "./type";
+import { useParams } from "react-router-dom";
 
-const Footer = ({
-  userObject,
-  sum,
-}: {
-  userObject: userDataType;
-  sum: (num: number) => number;
-}) => {
-  const sumOf3 = sum(3);
-  return (
-    <footer className=" bg-slate-400">
-      <div>footer {userObject.name}</div>
-      <div>
-        {userObject.tech.map((item) => (
-          <div key={item}>
-            {item}
-            {sumOf3}
-          </div>
-        ))}
-      </div>
-    </footer>
-  );
+const Footer = () => {
+  const { userId } = useParams();
+  return <div>{userId}</div>;
 };
 
 export default Footer;
