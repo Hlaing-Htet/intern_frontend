@@ -1,3 +1,3 @@
-import { fetchProducts } from "./productsApi";
+import { fetchProducts, createNewProduct } from "./productsApi";
 
-export { fetchProducts };
+export { fetchProducts, createNewProduct };

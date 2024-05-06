@@ -1,10 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { useFetchProducts } from "../../hooks/useProductsApi";
 
 const HomePage = () => {
+  const [filter, _] = useState({ limit: 20, sort: "desc" });
   const { data, isLoading, isError, error, isSuccess, refetch, status } =
-    useFetchProducts();
+    useFetchProducts({ limit: filter.limit, sort: filter.sort });
 
   useEffect(() => {
     if (isSuccess) {
@@ -46,6 +47,36 @@ const HomePage = () => {
           className="w-20 "
         />
       </div> */}
+      {/* <ul>
+        <li
+          className="p-4 cursor-pointer w-fit bg-slate-400"
+          onClick={() => setFilter((prev) => ({ ...prev, sort: "desc" }))}
+        >
+          Desc
+        </li>
+        <li
+          className="p-4 cursor-pointer w-fit bg-slate-400"
+          onClick={() => setFilter((prev) => ({ ...prev, sort: "asc" }))}
+        >
+          Asc
+        </li>
+      </ul> */}
+
+      {/* <ul>
+        <li
+          className="p-4 cursor-pointer w-fit bg-slate-400"
+          onClick={() => setFilter((prev) => ({ ...prev, limit: 5 }))}
+        >
+          5
+        </li>
+        <li
+          className="p-4 cursor-pointer w-fit bg-slate-400"
+          onClick={() => setFilter((prev) => ({ ...prev, limit: 20 }))}
+        >
+          20
+        </li>
+      </ul> */}
+
       {data?.map((item) => (
         <div className="p-4 m-2 bg-blue-300 " key={item.id}>
           {item.title}

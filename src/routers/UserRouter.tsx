@@ -1,6 +1,11 @@
 import { Navigate, RouteObject } from "react-router-dom";
 import UserLayout from "../layouts/UserLayout";
-import { ExplorePage, HomePage, MyCourse } from "../pages/user";
+import {
+  CreateNewProductPage,
+  ExplorePage,
+  HomePage,
+  MyCourse,
+} from "../pages/user";
 import { Cart } from "../components";
 
 const UserRouter: RouteObject[] = [
@@ -22,6 +27,10 @@ const UserRouter: RouteObject[] = [
             element: <Cart />,
           },
         ],
+      },
+      {
+        path: "new/product",
+        element: <CreateNewProductPage />,
       },
       {
         path: "explore",
