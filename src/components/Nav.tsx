@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
+import Button from "./Button";
 
 const Nav = () => {
   return (
@@ -30,7 +31,9 @@ const Nav = () => {
         </NavLink>
       </div>
       <div>
-        <Link to={"new/product"}>add new</Link>
+        <Link to={"new/product"}>
+          <Button>Add New</Button>
+        </Link>
       </div>
     </div>
   );
